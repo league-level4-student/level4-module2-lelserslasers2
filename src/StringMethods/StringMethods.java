@@ -4,17 +4,17 @@ import java.util.Arrays;
 import java.util.Base64;
 
 /*
-Visit the JavaDocs for the String class to view everything you can do with a String.  
+Visit the JavaDocs for the String class to view everything you can do with a String.
 
 
-HINT:  Here are some String methods you might find useful 
+HINT:  Here are some String methods you might find useful
 contains
 replace
 trim
 length
 getBytes
 endsWith
-split 
+split
 indexOf
 lastIndexOf
 compareTo(IgnoreCase)
@@ -39,27 +39,88 @@ public class StringMethods {
 		return s2;
 	}
 
-	
+
 	// if String s contains the word "underscores", change all of the spaces to underscores
 	public static String formatSpaces(String s) {
-		return null;
+
+		char[] sList = s.toCharArray();
+
+
+		if (s.contains("underscores"))
+		{
+			System.out.println("AHAHH");
+			for (int i = 0; i < s.length(); i++) {
+
+				if (sList[i] == ' ') {
+					System.out.println("YOS");
+					sList[i] = '_';
+
+				}
+			}
+		}
+		String output = "";
+		for (int i = 0; i < sList.length; i++) {
+			output = output + sList[i];
+
+
+		}
+		System.out.println(output);
+		return output;
 	}
 
-	
+
 	// Return the name of the person whose LAST name would appear first if they were in alphabetical order
 	// You cannot assume there are no extra spaces around the name, but you can
 	// assume there is only one space between the first and last name
 	public static String lineLeader(String s1, String s2, String s3) {
-		return null;
+		s1.trim();
+		s2.trim();
+		s3.trim();
+
+		char s1Let;
+		char s2Let;
+		char s3Let;
+
+		for (int i = 0; i < s1.length(); i++) {
+			if (s1.charAt(i) = ' '){
+				s1Let = s1.charAt(i + 1);
+			}
+		}
+		for (int i = 0; i < s1.length(); i++) {
+			if (s3.charAt(i) = ' '){
+				s1Let = s2.charAt(i + 1);
+			}
+		}
+		for (int i = 0; i < s1.length(); i++) {
+			if (s3.charAt(i) = ' '){
+				s1Let = s3.charAt(i + 1);
+			}
+		}
+
+		if (s1Let < s2Let){
+			if (s1Let < s3Let){
+				return s1;
+			}
+			else {
+				return s3;
+			}
+		}
+		else if (s2Let < s3Let){
+			return s2Let;
+			else {
+				return s3Let;
+			}
+
+		return s3;
 	}
-	
-	
+
+
 	// Return the sum of all numerical digits in the String
 	public static int numeralSum(String s) {
 		return 0;
 	}
-	
-	
+
+
 	// Return the number of times String substring appears in String s
 	public static int substringCount(String s, String substring) {
 		return 0;
@@ -81,7 +142,7 @@ public class StringMethods {
 	public static int wordsEndsWithSubstring(String s, String substring) {
 		return 0;
 	}
-	
+
 
 	// Given String s, return the number of characters between the first occurrence
 	// of String substring and the final occurrence
@@ -97,7 +158,7 @@ public class StringMethods {
 	public static boolean palindrome(String s) {
 		return true;
 	}
-	
+
 }
 
 class Utilities {
