@@ -73,27 +73,33 @@ public class StringMethods {
 	// You cannot assume there are no extra spaces around the name, but you can
 	// assume there is only one space between the first and last name
 	public static String lineLeader(String s1, String s2, String s3) {
-		s1.trim();
-		s2.trim();
-		s3.trim();
+		s1 = s1.trim();
+		s2 = s2.trim();
+		s3 = s3.trim();
+		
+		char[] s1List = s1.toCharArray();
+		char[] s2List = s2.toCharArray();
+		char[] s3List = s3.toCharArray();
 
-		char s1Let;
-		char s2Let;
-		char s3Let;
+		char s1Let = ' ';
+		char s2Let = ' ';
+		char s3Let = ' ';
 
 		for (int i = 0; i < s1.length(); i++) {
-			if (s1.charAt(i) = ' '){
+			if (s1List[i] == ' '){
+				System.out.println(i);
 				s1Let = s1.charAt(i + 1);
+				System.out.println("AHHHHHHHo");
 			}
 		}
-		for (int i = 0; i < s1.length(); i++) {
-			if (s3.charAt(i) = ' '){
-				s1Let = s2.charAt(i + 1);
+		for (int i = 0; i < s2.length(); i++) {
+			if (s2List[i] == ' '){
+				s2Let = s2.charAt(i + 1);
 			}
 		}
-		for (int i = 0; i < s1.length(); i++) {
-			if (s3.charAt(i) = ' '){
-				s1Let = s3.charAt(i + 1);
+		for (int i = 0; i < s3.length(); i++) {
+			if (s3List[i] == ' '){
+				s3Let = s3.charAt(i + 1);
 			}
 		}
 
@@ -105,42 +111,122 @@ public class StringMethods {
 				return s3;
 			}
 		}
-		else if (s2Let < s3Let){
-			return s2Let;
+		else 
+			if (s2Let < s3Let){
+				return s2;
+			}
 			else {
-				return s3Let;
+				return s3;
 			}
 
-		return s3;
 	}
 
 
 	// Return the sum of all numerical digits in the String
 	public static int numeralSum(String s) {
-		return 0;
+		int sum = 0;
+		for (int i = 0; i < s.length(); i++) {
+			try {
+				sum = sum +  Integer.parseInt(String.valueOf(s.charAt(i)));
+			}
+			catch(Exception e) {
+				
+			}
+		}
+		
+		return sum;
 	}
 
 
 	// Return the number of times String substring appears in String s
 	public static int substringCount(String s, String substring) {
-		return 0;
+		
+		System.out.println("substringCount");
+		
+		int count = 0;
+		int a = 0;
+		
+		for (int i = 0; i < s.length(); i++) {
+			
+			boolean flag = true;
+			
+			for (int j = 0; j < substring.length(); j++) {
+				
+				a = i;
+				
+				if (s.charAt(i) != substring.charAt(j)) {
+					flag = false;
+				}
+				else {
+					i = i + 1;
+				}
+			}
+			
+			i = a;
+			
+			if (flag) {
+				count = count + 1;
+				System.out.println(i);
+				System.out.println(a);
+			}
+			
+			
+			
+		}
+		
+		
+		return count;
 	}
 
 	// Call Utitilities.encrypt to encrypt String s
 	public static String encrypt(String s, char key) {
-		return null;
+		return Utilities.encrypt(s.getBytes(), (byte)key);
 	}
 
 	// Call Utilities.decrypt to decrypt the cyphertext
 	public static String decrypt(String s, char key) {
-		return null;
+		return Utilities.decrypt(s, (byte)key);
 	}
 
 
 	// Return the number of words in String s that end with String substring
 	// You can assume there are no punctuation marks between words
 	public static int wordsEndsWithSubstring(String s, String substring) {
-		return 0;
+		int count = 0;
+		int a = 0;
+		
+		for (int i = 0; i < s.length(); i++) {
+			
+			boolean flag = true;
+			
+			for (int j = 0; j < substring.length(); j++) {
+				
+				a = i;
+				
+				if (s.charAt(i) != substring.charAt(j)) {
+					flag = false;
+				}
+				else {
+					i = i + 1;
+				}
+				
+				
+			}
+			
+			i = a;
+			
+			if (flag && s.charAt(i + 1) == ' ') {
+				count = count + 1;
+				System.out.println(i);
+				System.out.println(a);
+			}
+			
+			
+			
+		}
+		
+		
+		return count;
 	}
 
 
@@ -156,6 +242,11 @@ public class StringMethods {
 	// palindromes are words or phrases are read the same forward as backward.
 	// HINT: ignore/remove all punctuation and spaces in the String
 	public static boolean palindrome(String s) {
+		
+		for (int i = 0; i < s.length(); i++) {
+			if 
+		}
+		
 		return true;
 	}
 
