@@ -234,6 +234,8 @@ public class StringMethods {
 	// of String substring and the final occurrence
 	// You can assume that substring will appear at least twice
 	public static int distance(String s, String substring) {
+		
+		
 		return 0;
 	}
 
@@ -243,9 +245,28 @@ public class StringMethods {
 	// HINT: ignore/remove all punctuation and spaces in the String
 	public static boolean palindrome(String s) {
 		
+		String s2 = "";
 		for (int i = 0; i < s.length(); i++) {
-			if 
+			if (s.charAt(i) != '.' && s.charAt(i) != ',' && s.charAt(i) != ':' && s.charAt(i) != '?' && s.charAt(i) != ' ') {
+				s2 = s2 + s.charAt(i);
+			}
+
 		}
+		
+		s = s2.toLowerCase();
+		
+		System.out.println("---------------------------------");
+		
+		int counte = 1;
+		while (0 < (s.length() - counte)) {	
+			System.out.println(s.charAt(counte - 1));
+			System.out.println(s.charAt(s.length() - counte));
+			if (s.charAt(counte - 1) != s.charAt(s.length() - counte)){
+				return false;
+			}
+			counte = counte + 1;
+		}
+		
 		
 		return true;
 	}
